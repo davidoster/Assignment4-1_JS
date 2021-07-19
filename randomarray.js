@@ -11,6 +11,12 @@
 7. return the array
 */
 
+/*
+Documentation for: function randomArray(noOfElements)
+parameters: noOfElements: positive integer
+returns: array of integers
+description: returns an array of random numbers from 0 to noOfElements - 1
+*/
 function randomArray(noOfElements) {
     let array = []
     for( let element = 0; element <= noOfElements - 1; element++ ) {

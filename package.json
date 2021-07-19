@@ -1,0 +1,22 @@
+{
+  "name": "ass4",
+  "version": "1.0.0",
+  "description": "Algorithms",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidoster/Assignment4-1_JS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davidoster/Assignment4-1_JS/issues"
+  },
+  "homepage": "https://github.com/davidoster/Assignment4-1_JS#readme",
+  "dependencies": {
+    "perf_hooks": "0.0.1"
+  }
+}
