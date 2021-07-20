@@ -1,12 +1,24 @@
-const Insertion = require('./sorting/insertion')
-const randomArray = require('./randomarray')
+const Color         = require('./models/color')
+const Fabric        = require('./models/fabric')
+const Size          = require('./models/size')
+let myColors        = new Color({ Red: 'RED', Orange: 'ORANGE', Yellow: 'YELLOW', Green: 'GREEN', Blue: 'BLUE', Indigo: 'INDIGO', Violet: 'VIOLET' })
+let mySizes         = new Size({ XS: 'XS', S: 'S', M: 'M', L: 'L', XL: 'XL', XXL: 'XXL', XXXL: 'XXXL' })
+let myFabrics       = new Fabric({ Wool: 'WOOL', Cotton: 'COTTON', Polyester: 'POLYESTER', Rayon: 'RAYON', Linen: 'LINEN', Cashmere: 'CASHEMERE', Silk: 'SILK' })
+const TShirt        = require('./models/tshirt') 
+const Insertion     = require('./sorting/insertion')
+const BubbleSort    = require('./sorting/bubble')
+const randomArray   = require('./randomarray')
+const RandomTShirt  = require('./models/randomtshirt')
 const Timer = require('./timer')
 var myInsertionSort = new Insertion()
+var myBubbleSort = new BubbleSort()
+
+
+let myTShirt1 = new RandomTShirt(myColors, mySizes, myFabrics)
+console.log(myTShirt1)
 
 let myArray = randomArray(10)
-console.log(myArray)
-let myTimer = new Timer(true)
-myInsertionSort.sort(myArray)
-myTimer.stop()
-console.log(myTimer.time)
-console.log(myArray)
+myBubbleSort.sort(myArray, true, true) // 1st param: array, 2nd param: timer, 3rd param: printout
+
+
+
