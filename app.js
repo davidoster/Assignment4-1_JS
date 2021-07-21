@@ -20,7 +20,7 @@ var myBubbleSort = new BubbleSort(myColors, mySizes, myFabrics)
 // myBubbleSort.sort(myArray, true, true) // 1st param: array, 2nd param: timer, 3rd param: printout
 
 let randomTShirts = generateRandomTShirts(2)
-myBubbleSort.sort(randomTShirts, true, true)
+myBubbleSort.sort(randomTShirts, true, true, { attribute: 'color', sort: 'ASC'})
 
 
 function generateRandomTShirts(number) {

@@ -7,7 +7,7 @@ Color.Red
 
 
 class Color {
-    constructor(colors) {
+    constructor(colors) { // color = { Red: 'RED'.....}
         this.colors = colors // [{key: value}, {key: value}]
     }
     
