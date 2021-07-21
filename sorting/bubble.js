@@ -48,22 +48,23 @@ class BubbleSort {
 
     compareTShirtsByAttribute(tshirt1, tshirt2, options) {
         if(options.sort == 'ASC') {
-            switch(options.attribute) {
+            switch(options.attribute) { // options = { attribute: 'color', sort: 'ASC'}
                 case 'size':
-                    return this.sizes.getIndexBySizeValue(tshirt1.size) > this.sizes.getIndexBySizeValue(tshirt2.size)
+                    return this.sizes.getIndexBySizeName(tshirt1.size) > this.sizes.getIndexBySizeName(tshirt2.size)
                 case 'color':
-                    return this.colors.getIndexByColorValue(tshirt1.color) > this.colors.getIndexByColorValue(tshirt2.color)
+                    // console.log(tshirt1.color, this.colors.getIndexByColorName(tshirt1.color), tshirt2.color, this.colors.getIndexByColorName(tshirt2.color))
+                    return this.colors.getIndexByColorName(tshirt1.color) > this.colors.getIndexByColorName(tshirt2.color)
                 case 'fabric':
-                    return this.fabrics.getIndexByFabricValue(tshirt1.fabric) > this.fabrics.getIndexByFabricValue(tshirt2.fabric)
+                    return this.fabrics.getIndexByFabricName(tshirt1.fabric) > this.fabrics.getIndexByFabricName(tshirt2.fabric)
             }
         } else {
             switch(options.attribute) {
                 case 'size':
-                    return this.sizes.getIndexBySizeValue(tshirt1.size) < this.sizes.getIndexBySizeValue(tshirt2.size)
+                    return this.sizes.getIndexBySizeName(tshirt1.size) < this.sizes.getIndexBySizeName(tshirt2.size)
                 case 'color':
-                    return this.colors.getIndexByColorValue(tshirt1.color) < this.colors.getIndexByColorValue(tshirt2.color)
+                    return this.colors.getIndexByColorName(tshirt1.color) < this.colors.getIndexByColorName(tshirt2.color)
                 case 'fabric':
-                    return this.fabrics.getIndexByFabricValue(tshirt1.fabric) < this.fabrics.getIndexByFabricValue(tshirt2.fabric)
+                    return this.fabrics.getIndexByFabricName(tshirt1.fabric) < this.fabrics.getIndexByFabricName(tshirt2.fabric)
             }
         }
         return false
