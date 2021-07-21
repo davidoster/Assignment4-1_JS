@@ -15,7 +15,10 @@ class BubbleSort {
         var i, j;
         var len = arr.length;
         var isSwapped = false;
-        if(printout) console.log(array) // Original array
+        if(printout) {
+            console.log(`Bubble SORT, ${options.attribute} - ${options.sort} - UNSORTED Array`)
+            array.forEach(element => console.log(element.toString())) // Original array
+        } 
         if(timer) myTimer.start()
         for (i = 0; i < len; i++) {
             isSwapped = false;
@@ -37,7 +40,10 @@ class BubbleSort {
             myTimer.stop()
             console.log(myTimer.time)
         }
-        if(printout) console.log(arr) // Sorted array
+        if(printout) {
+            console.log(`Bubble SORT, , ${options.attribute} - ${options.sort} - SORTED Array`)
+            arr.forEach(element => console.log(element.toString()))  // Sorted array
+        }
     }
 
     compareTShirtsByAttribute(tshirt1, tshirt2, options) {
