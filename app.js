@@ -7,11 +7,13 @@ let myFabrics       = new Fabric({ Wool: 'WOOL', Cotton: 'COTTON', Polyester: 'P
 const TShirt        = require('./models/tshirt') 
 const Insertion     = require('./sorting/insertion')
 const BubbleSort    = require('./sorting/bubble')
+const QuickSort     = require('./sorting/quick')
 const randomArray   = require('./randomarray')
 const RandomTShirt  = require('./models/randomtshirt')
-const Timer = require('./timer')
+const Timer         = require('./timer')
 var myInsertionSort = new Insertion()
-var myBubbleSort = new BubbleSort(myColors, mySizes, myFabrics)
+var myBubbleSort    = new BubbleSort(myColors, mySizes, myFabrics)
+var myQuickSort     = new QuickSort(myColors, mySizes, myFabrics)
 
 // let myTShirt1 = new RandomTShirt(myColors, mySizes, myFabrics)
 // console.log(myTShirt1)
@@ -19,9 +21,10 @@ var myBubbleSort = new BubbleSort(myColors, mySizes, myFabrics)
 // let myArray = randomArray(20)
 // myBubbleSort.sort(myArray, true, true) // 1st param: array, 2nd param: timer, 3rd param: printout
 
-let randomTShirts = generateRandomTShirts(5)
-myBubbleSort.sort(randomTShirts, true, true, { attribute: 'fabric', sort: 'DESC'})
+let randomTShirts = generateRandomTShirts(3)
+// myBubbleSort.sort(randomTShirts, true, true, { attribute: 'fabric', sort: 'DESC'})
 
+myQuickSort.sort(randomTShirts, true, true, { attribute: 'size', sort: 'ASC' } )
 
 function generateRandomTShirts(number) {
     let myArray = []
