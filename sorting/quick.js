@@ -6,6 +6,7 @@ class QuickSort {
         this.colors = myColors
         this.sizes = mySizes
         this.fabrics = myFabrics
+        this.time = 0
     }
 
     sort(array, timer, printout, options) {
@@ -25,13 +26,17 @@ class QuickSort {
         let xArray = [...this.sort(front, timer, printout, options), array[pivotIndex], ...this.sort(back, timer, printout, options)]
         if(timer) {
             myTimer.stop()
-            console.log(myTimer.time)
+            this.time += myTimer.time
         }
         if(printout) {
             console.log(`Bubble SORT, ${options.attribute} - ${options.sort} - SORTED Array`)
             xArray.forEach(element => console.log(element.toString()))  // Sorted array
         }
         return xArray
+    }
+
+    sort2() {
+        
     }
 
     compareTShirtsByAttribute(tshirt1, tshirt2, options) {

@@ -24,7 +24,27 @@ var myQuickSort     = new QuickSort(myColors, mySizes, myFabrics)
 let randomTShirts = generateRandomTShirts(3)
 // myBubbleSort.sort(randomTShirts, true, true, { attribute: 'fabric', sort: 'DESC'})
 
-myQuickSort.sort(randomTShirts, true, true, { attribute: 'size', sort: 'ASC' } )
+// myQuickSort.sort(randomTShirts, true, false, { attribute: 'size', sort: 'ASC' } )
+// console.log(`QuickSort Time: ${myQuickSort.time}`)
+
+// let [b0, b1, b2, b3, b4, b5, b6] = [[], [], [], [], [], [], []]
+let buckets = {
+    0: [],
+    1: [],
+    2: [],
+    3: [],
+    4: [],
+    5: [],
+    6: []
+}
+
+// console.log(randomTShirts)
+console.log(randomTShirts[0].size)
+console.log(mySizes.getIndexBySizeValue(randomTShirts[0].size))
+buckets[mySizes.getIndexBySizeValue(randomTShirts[0].size)].push(randomTShirts[0])
+// buckets[mySizes.getIndexBySizeValue(randomTShirts[1].size)].push(randomTShirts[1])
+// buckets[mySizes.getIndexBySizeValue(randomTShirts[2].size)].push(randomTShirts[2])
+// console.log(buckets)
 
 function generateRandomTShirts(number) {
     let myArray = []

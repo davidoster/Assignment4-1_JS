@@ -1,8 +1,6 @@
 const Timer = require('../timer')
 let myTimer = new Timer()
 
-
-
 class BubbleSort {
     constructor(myColors, mySizes, myFabrics) {
         this.colors = myColors
