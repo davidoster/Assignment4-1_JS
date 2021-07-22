@@ -39,7 +39,7 @@ class BubbleSort {
             console.log(myTimer.time)
         }
         if(printout) {
-            console.log(`Bubble SORT, , ${options.attribute} - ${options.sort} - SORTED Array`)
+            console.log(`Bubble SORT, ${options.attribute} - ${options.sort} - SORTED Array`)
             arr.forEach(element => console.log(element.toString()))  // Sorted array
         }
     }

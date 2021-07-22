@@ -8,12 +8,14 @@ const TShirt        = require('./models/tshirt')
 const Insertion     = require('./sorting/insertion')
 const BubbleSort    = require('./sorting/bubble')
 const QuickSort     = require('./sorting/quick')
+const BucketSort    = require('./sorting/bucket')
 const randomArray   = require('./randomarray')
 const RandomTShirt  = require('./models/randomtshirt')
 const Timer         = require('./timer')
 var myInsertionSort = new Insertion()
 var myBubbleSort    = new BubbleSort(myColors, mySizes, myFabrics)
 var myQuickSort     = new QuickSort(myColors, mySizes, myFabrics)
+var myBucketSort    = new BucketSort(myColors, mySizes, myFabrics)
 
 // let myTShirt1 = new RandomTShirt(myColors, mySizes, myFabrics)
 // console.log(myTShirt1)
@@ -27,24 +29,9 @@ let randomTShirts = generateRandomTShirts(3)
 // myQuickSort.sort(randomTShirts, true, false, { attribute: 'size', sort: 'ASC' } )
 // console.log(`QuickSort Time: ${myQuickSort.time}`)
 
-// let [b0, b1, b2, b3, b4, b5, b6] = [[], [], [], [], [], [], []]
-let buckets = {
-    0: [],
-    1: [],
-    2: [],
-    3: [],
-    4: [],
-    5: [],
-    6: []
-}
+myBucketSort.sort(randomTShirts, true, true, { attribute: 'fabric', sort: 'DESC' })
 
-// console.log(randomTShirts)
-console.log(randomTShirts[0].size)
-console.log(mySizes.getIndexBySizeValue(randomTShirts[0].size))
-buckets[mySizes.getIndexBySizeValue(randomTShirts[0].size)].push(randomTShirts[0])
-// buckets[mySizes.getIndexBySizeValue(randomTShirts[1].size)].push(randomTShirts[1])
-// buckets[mySizes.getIndexBySizeValue(randomTShirts[2].size)].push(randomTShirts[2])
-// console.log(buckets)
+
 
 function generateRandomTShirts(number) {
     let myArray = []
