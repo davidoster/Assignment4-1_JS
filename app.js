@@ -17,21 +17,29 @@ var myBubbleSort    = new BubbleSort(myColors, mySizes, myFabrics)
 var myQuickSort     = new QuickSort(myColors, mySizes, myFabrics)
 var myBucketSort    = new BucketSort(myColors, mySizes, myFabrics)
 
-// let myTShirt1 = new RandomTShirt(myColors, mySizes, myFabrics)
-// console.log(myTShirt1)
-
-// let myArray = randomArray(20)
-// myBubbleSort.sort(myArray, true, true) // 1st param: array, 2nd param: timer, 3rd param: printout
-
 let randomTShirts = generateRandomTShirts(3)
-// myBubbleSort.sort(randomTShirts, true, true, { attribute: 'fabric', sort: 'DESC'})
+let bubbleSorted = myBubbleSort.sort(randomTShirts, true, false, { attribute: 'size', sort: 'ASC'})
+let commonBubbleSorted = myBucketSort.sort(bubbleSorted, false, false, { attribute: 'size', sort: 'ASC'})
+Object.values(commonBubbleSorted).forEach(subArray => {
+        // subArray.forEach(element => console.log(element.toString()))
+        // console.log(subArray.length)
+        if(subArray.length > 1) {
+            subArray = myBubbleSort.sort(subArray, true, false, { attribute: 'color', sort: 'ASC'})
+            let commonBubbleSortedByColor = myBucketSort.sort(subArray, false, false, 
+                                            { attribute: 'color', sort: 'ASC'})
+            
+            // this if doesn't work!!!! We need to implement as line 23 above!!!!!
+            if(commonBubbleSortedByColor.length > 1)
+            commonBubbleSortedByColor = myBubbleSort.sort(commonBubbleSortedByColor, false, false, 
+                                            { attribute: 'fabric', sort: 'ASC'})
+        }
+        
+    })
 
-// myQuickSort.sort(randomTShirts, true, false, { attribute: 'size', sort: 'ASC' } )
+// let quickSorted = myQuickSort.sort(randomTShirts, true, false, { attribute: 'size', sort: 'ASC' } )
 // console.log(`QuickSort Time: ${myQuickSort.time}`)
 
-myBucketSort.sort(randomTShirts, true, true, { attribute: 'fabric', sort: 'DESC' })
-
-
+// let bucketSorted = myBucketSort.sort(randomTShirts, true, true, { attribute: 'size', sort: 'ASC' })
 
 function generateRandomTShirts(number) {
     let myArray = []

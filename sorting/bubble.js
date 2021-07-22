@@ -42,6 +42,7 @@ class BubbleSort {
             console.log(`Bubble SORT, ${options.attribute} - ${options.sort} - SORTED Array`)
             arr.forEach(element => console.log(element.toString()))  // Sorted array
         }
+        return arr
     }
 
     compareTShirtsByAttribute(tshirt1, tshirt2, options) {

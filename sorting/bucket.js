@@ -40,6 +40,7 @@ class BucketSort {
             else
                 Object.values(buckets).forEach(subArray => subArray.forEach(element => console.log(element.toString())))
         }
+        return buckets
     }
 }
 
