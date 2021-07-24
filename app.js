@@ -19,12 +19,12 @@ var myBucketSort    = new BucketSort(myColors, mySizes, myFabrics)
 
 let randomTShirts = generateRandomTShirts(3)
 let bubbleSorted = myBubbleSort.sort(randomTShirts, true, false, { attribute: 'size', sort: 'ASC'})
-let commonBubbleSorted = myBucketSort.sort(bubbleSorted, false, false, { attribute: 'size', sort: 'ASC'})
+let commonBubbleSorted = myBucketSort.sort(bubbleSorted, false, true, { attribute: 'size', sort: 'ASC'})
 Object.values(commonBubbleSorted).forEach(subArray => {
         // subArray.forEach(element => console.log(element.toString()))
         // console.log(subArray.length)
         if(subArray.length > 1) {
-            subArray = myBubbleSort.sort(subArray, true, false, { attribute: 'color', sort: 'ASC'})
+            subArray = myBubbleSort.sort(subArray, true, true, { attribute: 'color', sort: 'ASC'})
             let commonBubbleSortedByColor = myBucketSort.sort(subArray, false, false, 
                                             { attribute: 'color', sort: 'ASC'})
             
